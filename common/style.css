@@ -542,12 +542,6 @@ a:hover{ text-decoration: underline; }
 .cta p{ margin:0 0 .85rem; color: rgba(34,34,34,.76); }
 
 /* ====== Contact ====== */
-.contact-grid{
-  display:grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 1rem;
-  align-items:start;
-}
 
 .form{
   background: rgba(255,255,255,.86);
@@ -737,7 +731,7 @@ input:focus, textarea:focus{
 /* ====== Contact Intents ====== */
 .contact-intents{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 1rem 0 1.25rem;
 }
