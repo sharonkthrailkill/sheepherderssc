@@ -352,37 +352,6 @@ a:hover{ text-decoration: underline; }
   color: var(--black);
 }
 
-.quick-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .75rem;
-}
-
-.quick{
-  display:block;
-  padding: .9rem;
-  border-radius: 16px;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(0,0,0,.10);
-  text-decoration:none;
-  color: inherit;
-}
-.quick:hover{
-  text-decoration:none;
-  background: rgba(157,179,219,.22);
-  border-color: rgba(33,60,132,.22);
-}
-.quick-title{
-  display:block;
-  font-weight: 600;
-  margin-bottom: .25rem;
-  color: var(--deep-blue);
-}
-.quick-desc{
-  display:block;
-  color: rgba(34,34,34,.72);
-  font-size: .9rem;
-}
 
 .callout{
   margin-top: .9rem;
@@ -763,4 +732,82 @@ input:focus, textarea:focus{
     grid-column: 1 / -1;
     box-sizing: border-box;
   }
+}
+
+/* ====== Contact Intents ====== */
+.contact-intents{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.intent-card{
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.intent-card h3{ margin: 0 0 .35rem; color: var(--black); }
+.intent-card p{ margin: 0 0 .75rem; }
+
+@media (max-width: 900px){
+  .contact-intents{ grid-template-columns: 1fr; }
+}
+
+/* ====== Scroll To Top Button ====== */
+
+.scroll-top{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--deep-blue);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all .25s ease;
+  z-index: 999;
+}
+
+.scroll-top:hover{
+  background: #0f2356;
+}
+
+.scroll-top.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#about-us .faith-callout{
+  margin: 0;
+  padding: .35rem 0 .35rem 1rem;
+  border-left: 4px solid var(--deep-blue);
+  font-size: .80rem;          
+  line-height: 1.65;
+  color: rgba(34,34,34,.72);  
+  letter-spacing: -.02em;
+}
+
+#about-us .faith-callout strong{
+  font-weight: 600;           
+  color: rgba(34,34,34,.88);
+}
+.hero-inner--single{
+  grid-template-columns: 1fr;
+}
+
+.hero-inner--single .hero-copy{
+  max-width: 720px; /* optional: keeps it from feeling too stretched */
 }
