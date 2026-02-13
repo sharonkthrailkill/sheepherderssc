@@ -237,9 +237,9 @@ a:hover{ text-decoration: underline; }
 
 .hero-inner{
   display:grid;
-  grid-template-columns: 1.25fr .9fr;
-  gap: .75rem;
-  align-items: start;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2rem;
+  align-items: center;
 }
 
 .eyebrow{
@@ -804,4 +804,51 @@ input:focus, textarea:focus{
 
 .hero-inner--single .hero-copy{
   max-width: 720px; /* optional: keeps it from feeling too stretched */
+}
+
+/* ===== Hero Video ===== */
+
+.hero-video{
+  position: relative;
+  max-width: 520px;  
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.85);
+
+  /* Force 16:9 ratio */
+  aspect-ratio: 16 / 9;
+}
+
+
+.hero-video a{
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.hero-video img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play button */
+.play-button{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  background: rgba(0,0,0,.25);
+  color: white;
+  transition: background .2s ease;
+}
+
+.hero-video:hover .play-button{
+  background: rgba(0,0,0,.35);
 }
