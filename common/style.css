@@ -808,47 +808,58 @@ input:focus, textarea:focus{
 
 /* ===== Hero Video ===== */
 
+/* ===== Hero Media Layout ===== */
+
+.hero-media{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Video container */
 .hero-video{
   position: relative;
-  max-width: 520px;  
-  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 460px;
+  backdrop-filter: blur(4px);
+
+
+  /* Slightly taller than 16:9 */
+  aspect-ratio: 4 / 3;
+
+  border-radius: 28px; /* softer edges */
   overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.85);
 
-  /* Force 16:9 ratio */
-  aspect-ratio: 16 / 9;
+  /* softer, lifted shadow */
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.12),
+    0 8px 20px rgba(0,0,0,0.08);
+
+  background: #000;
+
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
-
-.hero-video a{
-  position: absolute;
-  inset: 0;
-  display: block;
+/* Subtle hover lift */
+.hero-video:hover{
+  transform: translateY(-6px);
+  box-shadow:
+    0 35px 80px rgba(0,0,0,0.16),
+    0 12px 28px rgba(0,0,0,0.10);
 }
 
-.hero-video img{
+/* Video fills container cleanly */
+.hero-video video{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Play button */
-.play-button{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 2rem;
-  background: rgba(0,0,0,.25);
-  color: white;
-  transition: background .2s ease;
-}
-
-.hero-video:hover .play-button{
-  background: rgba(0,0,0,.35);
+/* Hide on mobile */
+@media (max-width: 900px){
+  .hero-media{
+    display: none;
+  }
 }
