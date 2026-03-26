@@ -452,7 +452,7 @@ a:hover{
 
 .section-head p{
   margin:0;
-  max-width:60ch;
+  max-width:1000px;
   color:rgba(34,34,34,.76);
 }
 
@@ -762,6 +762,12 @@ textarea:focus{
   .hero-media{
     display:none;
   }
+
+  @media (max-width: 768px){
+  .hero::before{
+    background-position: 30% 10%;
+  }
+}
 
   .section-grid--3,
   .stats,
