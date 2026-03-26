@@ -431,7 +431,7 @@ a:hover{
 
 /* ====== Unified Sections ====== */
 .section{
-  padding:2rem 0;
+  padding:1rem 0;
 }
 
 .section.alt{
@@ -452,7 +452,7 @@ a:hover{
 
 .section-head p{
   margin:0;
-  max-width:1000px;
+  max-width:1100px;
   color:rgba(34,34,34,.76);
 }
 
@@ -460,19 +460,83 @@ a:hover{
   margin-top:.75rem;
 }
 
-/* keep accent */
-#about-us .faith-callout{
-  margin:0;
-  padding:.35rem 0 .35rem 1rem;
-  border-left:4px solid var(--deep-blue);
-  font-size:.85rem;
-  line-height:1.65;
-  color:rgba(34,34,34,.72);
+.founder-message{
+  margin: 1.5rem auto 2rem;
+  padding: 1.25rem;
+  max-width: 1200px;
 }
 
-#about-us .faith-callout strong{
-  font-weight:600;
-  color:rgba(34,34,34,.88);
+.founder-message__inner{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* video column */
+.founder-message__media{
+  width: 240px;
+}
+
+.founder-video{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: #ddd;
+}
+
+.founder-message__copy{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+
+}
+
+.founder-message__copy h3{
+  margin: 0 0 0.5rem;
+}
+
+.founder-message__copy > p{
+  margin: 0;
+}
+
+.founder-message__copy .faith-callout{
+  align-self: end;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 3px solid var(--deep-blue);
+  color:#222222;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  width: 80ch;
+}
+/* mobile */
+@media (max-width: 900px){
+  .founder-message__inner{
+    grid-template-columns: 1fr;
+  }
+  .founder-message__copy p{
+  padding-bottom: 10px;
+}
+
+  .founder-message__copy{
+    height: auto;
+  }
+  
+}
+
+
+@media (max-width: 900px){
+  .founder-message__copy .faith-callout{
+    border-left: none;
+    border-top: 2px solid var(--deep-blue);
+    padding: 1rem 0.75rem 0.75rem; 
+    width: 90%;
+    max-width: 100ch;
+  }
+
 }
 
 /* ====== Unified Grids ====== */
@@ -506,7 +570,7 @@ a:hover{
 
 .section-card .card-toggle{
   width:100%;
-  min-height:72px;
+  min-height:auto;
   background:none;
   border:none;
   padding:0;
@@ -518,7 +582,7 @@ a:hover{
 }
 
 .section-card .card-toggle h3{
-  margin:0;
+  margin-bottom:.5rem;
   padding:0;
   font-family:"Lora", Georgia, serif;
   font-size:1.25rem;
@@ -536,7 +600,6 @@ a:hover{
 
 .section-card .card-content{
   display:block;
-  padding-top:.85rem;
 }
 
 .section-card .card-content > * + *{
