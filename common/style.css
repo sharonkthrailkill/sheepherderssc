@@ -137,7 +137,7 @@ a:hover{
 }
 
 .wordmark{
-  height:45px;
+  height:55px;
   width:auto;
   object-fit:contain;
   display:block;
@@ -670,29 +670,37 @@ textarea:focus{
 
 .contact-info-grid{
   display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:1.5rem;
+  grid-template-columns: 1fr 1fr;
   align-items:start;
 }
 
 .contact-emergency-block{
-  padding:1rem 1.25rem;
-  border-radius:12px;
-  background:var(--surface-soft);
-  border:1px solid var(--border);
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding-left: 2rem;
+  border-left: 3px solid #B03A3A;
 }
 
+
 .contact-emergency-block h3{
-  margin-top:0;
+  margin-top: 0;
 }
 
 .contact-emergency-block p{
-  margin:0 0 .75rem;
-  color:rgba(34,34,34,.76);
+  margin: 0.5rem 0;
 }
 
-.contact-emergency-block p:last-child{
-  margin-bottom:0;
+@media (max-width: 900px){
+  .contact-emergency-block{
+    border-left: none;
+    border-top: 3px solid #B03A3A;
+    padding-left: 0;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
 }
 
 .hidden-field{
@@ -765,7 +773,7 @@ textarea:focus{
 
   @media (max-width: 768px){
   .hero::before{
-    background-position: 30% 10%;
+    background-position: 22% 10%;
   }
 }
 
@@ -1003,5 +1011,88 @@ textarea:focus{
 
   .section-card.active .toggle-icon{
     transform: rotate(45deg);
+  }
+}
+
+.site-footer{
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding: 0.75rem 0.75rem;
+  border-top: 1px solid var(--border);
+  background-color: #FFFFFF;
+}
+
+
+.footer-inner{
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-left,
+.footer-right{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
+.footer-left p,
+.footer-right p{
+  margin: 0;
+}
+
+.footer-left{
+  align-items: center;
+  text-align: left;
+}
+
+.footer-right{
+  text-align: right;
+}
+
+.footer-right a:hover{
+  text-decoration: underline;
+}
+
+.footer-bottom{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.footer-wordmark{
+  width: auto;
+  max-width: 250px;
+  object-fit: contain;
+  display: block;
+  margin-left: -15px;
+}
+
+@media (max-width: 768px){
+  .footer-inner{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-right{
+    text-align: center;
+  }
+
+  .footer-wordmark{
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px){
+  .footer-right{
+    display: none;
   }
 }
