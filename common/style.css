@@ -678,6 +678,7 @@ textarea:focus{
   padding-left: 2rem;
   border-left: 1px solid var(--border);
   background: none;
+  height: 200px;
   border-radius: 0;
   box-shadow: none;
   padding-left: 2rem;
